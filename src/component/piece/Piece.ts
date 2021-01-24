@@ -49,7 +49,7 @@ const teamPieces: Record<ChessPiece, PieceProps> = {
 }
 
 type TeamProps = {
-    color: Color
+    color: Color,
 }
 
 export const teamProps: Record<Team, TeamProps> = {

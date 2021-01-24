@@ -5,7 +5,6 @@ import { Game } from './container/game';
 
 function App() {
   return (<>
-    <h1>Cess board</h1>
     <Game></Game>
   </>
   );

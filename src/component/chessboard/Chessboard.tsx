@@ -14,6 +14,7 @@ import './Chessboard.css'
 type ChessboardProps = {
     x: number,
     y: number,
+    piecePositions: Record<string, Piece>
 }
 
 const getIconFromChessPiece = (piece: Piece) => {
@@ -27,19 +28,8 @@ const getIconFromChessPiece = (piece: Piece) => {
     }
 }
 
-export const Chessboard = ({ x, y }: ChessboardProps) => {
+export const Chessboard = ({ x, y, piecePositions }: ChessboardProps) => {
     let i, j;
-    const pieces: Record<string, Piece> = {}
-    pieces['0:3'] = {
-        tag: 'king',
-        team: 'black'
-    }
-    pieces['3:7'] = {
-        tag: 'pawn',
-        team: 'white'
-    }
-
-    console.log(pieces)
 
     const rows = []
     for (j = 0; j < y; j++) {
@@ -49,10 +39,10 @@ export const Chessboard = ({ x, y }: ChessboardProps) => {
             const coord = j + ':' + i
             let piece = null
 
-            if (pieces[coord]) {
+            if (piecePositions[coord]) {
                 piece =
-                    < div className={`piece ${pieces[coord].team}`}>
-                        <FontAwesomeIcon icon={getIconFromChessPiece(pieces[coord])}></FontAwesomeIcon> </div>
+                    < div className={`piece ${piecePositions[coord].team}`}>
+                        <FontAwesomeIcon icon={getIconFromChessPiece(piecePositions[coord])}></FontAwesomeIcon> </div>
             }
 
             columns.push(<div className={`square ${isOdd ? 'odd' : 'even'}`} key={`square:${i}:${j}`}>

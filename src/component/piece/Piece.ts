@@ -6,7 +6,7 @@ import {
     faChessQueen,
     faChessKing
 } from '@fortawesome/free-solid-svg-icons'
-import { Color } from '../common'
+import { Color, Team } from '../common'
 
 type ChessPiece = 'pawn' | 'rook' | 'knight' | 'bishop' | 'queen' | 'king'
 type ChessPieceIcons = typeof faChessPawn |
@@ -16,7 +16,6 @@ type ChessPieceIcons = typeof faChessPawn |
     typeof faChessQueen |
     typeof faChessKing
 
-type Team = 'black' | 'white'
 
 export type Piece = {
     tag: ChessPiece,

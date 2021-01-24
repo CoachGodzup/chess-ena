@@ -1,11 +1,12 @@
 import React from 'react'
 import { Chessboard } from './component/chessboard/Chessboard';
+import { Game } from './container/game';
 
 
 function App() {
   return (<>
     <h1>Cess board</h1>
-    <Chessboard x={8} y={8}></Chessboard>
+    <Game></Game>
   </>
   );
 }

@@ -1,0 +1,22 @@
+/*
+$square-dimension: 64px;
+$square-color-odd: 'wheat';
+$square-color-even: 'brown'; 
+*/
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.square {
+    height: 64px;
+    width: 64px;
+}
+
+.square.odd {
+    background: wheat;
+}
+
+.square.even {
+    background: darkgoldenrod;
+}
